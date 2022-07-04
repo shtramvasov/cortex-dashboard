@@ -1,0 +1,35 @@
+@import 'breakpoints';
+
+// Structure
+.flex {
+  display: flex;
+}
+
+.cols {
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.pb-32 {
+  padding-bottom: 2rem;
+}
+.pb-48 {
+  padding-bottom: 3rem;
+}
+.pb-64 {
+  padding-bottom: 4rem;
+}
+.pb-80 {
+  padding-bottom: 5rem;
+}

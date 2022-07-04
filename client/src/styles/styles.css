@@ -21,6 +21,7 @@ html {
 h1 {
   font-size: 2rem;
   font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 h2 {
@@ -62,4 +63,40 @@ a {
 }
 a:hover {
   color: #8B5CF6;
+}
+
+.flex {
+  display: flex;
+}
+
+.cols {
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.pb-32 {
+  padding-bottom: 2rem;
+}
+
+.pb-48 {
+  padding-bottom: 3rem;
+}
+
+.pb-64 {
+  padding-bottom: 4rem;
+}
+
+.pb-80 {
+  padding-bottom: 5rem;
 }/*# sourceMappingURL=styles.css.map */
