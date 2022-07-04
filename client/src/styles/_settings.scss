@@ -42,9 +42,53 @@ $font-yellow: #605D46;
 $warning-bg: #F5E8D5;
 $warning-outline: #EAD8BD;
 
-// Typography
-
 // Misc
 $transition: ease-in-out 250ms;
 $border-raduis: 8px;
 $shadow: 0px 4px 8px 4px rgba(245, 245, 244, 0.05);
+
+// Typography
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  &.bold {
+    font-weight: 500;
+  }
+  &.light {
+    font-weight: 300;
+  }
+  &.description {
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+}
+
+h1,
+h2,
+p {
+  color: $font-black;
+}
+
+p.light {
+  color: $font-gray;
+}
+
+a {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: $violet;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: $violet-hover;
+  }
+}

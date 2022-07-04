@@ -16,4 +16,50 @@ html {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+p.bold {
+  font-weight: 500;
+}
+p.light {
+  font-weight: 300;
+}
+p.description {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+h1,
+h2,
+p {
+  color: #3F3F46;
+}
+
+p.light {
+  color: #9CA3AF;
+}
+
+a {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #A78BFA;
+  text-decoration: none;
+  transition: ease-in-out 250ms;
+}
+a:hover {
+  color: #8B5CF6;
 }/*# sourceMappingURL=styles.css.map */
