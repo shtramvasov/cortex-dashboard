@@ -185,4 +185,16 @@ button__delete:hover, .button__delete:hover {
 button__delete::before, .button__delete::before {
   content: " ";
   display: inline-flex;
+}
+button__page, .button__page {
+  color: #9CA3AF;
+  font-weight: 300;
+  padding: 1rem 1.25rem;
+  width: auto;
+  background-color: #fff;
+  border: 1px solid #E7E5E4;
+}
+button__page:hover, .button__page:hover {
+  color: #3F3F46;
+  background-color: #E7E5E4;
 }/*# sourceMappingURL=styles.css.map */

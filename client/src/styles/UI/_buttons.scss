@@ -32,4 +32,18 @@ button, .button {
       display: inline-flex;
     }
   }
+
+  &__page {
+    color: $font-gray;
+    font-weight: 300;
+    padding: 1rem 1.25rem;
+    width: auto;
+    background-color: $white;
+    border: 1px solid $outline-gray;
+
+    &:hover {
+      color: $font-black;
+      background-color: $outline-gray;
+    }
+  }
 }
