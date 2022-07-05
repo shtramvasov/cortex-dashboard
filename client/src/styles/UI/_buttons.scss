@@ -1,0 +1,35 @@
+button, .button {
+  font-family: 'Inter', sans-serif;
+  border: none;
+  background-color: $violet;
+  cursor: pointer;
+  color: $white;
+  font-size: 1.125rem;
+  font-weight: 400;
+  border-radius: $border-raduis;
+  transition: $transition;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  &:hover {
+    background-color: $violet-hover;
+  }
+
+  &__delete {
+    background-color: $red;
+    width: auto;
+    background-repeat: no-repeat;
+    background-image: url('../images/Icon-delete.svg');
+    background-position: center;
+
+    &:hover {
+        background-color: $red-hover;
+      }
+
+    &::before {
+      content: ' ';
+      display: inline-flex;
+    }
+  }
+}

@@ -153,4 +153,36 @@ input__password,
 input__search,
 .input__search {
   background-image: url("../images/Icon-search.svg");
+}
+
+button, .button {
+  font-family: "Inter", sans-serif;
+  border: none;
+  background-color: #A78BFA;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 400;
+  border-radius: 8px;
+  transition: ease-in-out 250ms;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+button:hover, .button:hover {
+  background-color: #8B5CF6;
+}
+button__delete, .button__delete {
+  background-color: #FB7185;
+  width: auto;
+  background-repeat: no-repeat;
+  background-image: url("../images/Icon-delete.svg");
+  background-position: center;
+}
+button__delete:hover, .button__delete:hover {
+  background-color: #f43f5e;
+}
+button__delete::before, .button__delete::before {
+  content: " ";
+  display: inline-flex;
 }/*# sourceMappingURL=styles.css.map */

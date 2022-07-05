@@ -1,6 +1,6 @@
 import React from 'react'
 
-function InputUI({ placeholder, type = 'text', label, icon }) {
+function InputUI({ placeholder, type = 'text', label, icon, fn }) {
   return label ? (
 		<label className='flex cols'>
 			{label}
@@ -8,7 +8,7 @@ function InputUI({ placeholder, type = 'text', label, icon }) {
 				type={type}
 				placeholder={placeholder}
 				className={'input'}
-				//onChange
+				onChange={fn}
 			/>
 		</label>
 	) : (
@@ -16,8 +16,7 @@ function InputUI({ placeholder, type = 'text', label, icon }) {
 			type={type}
 			placeholder={placeholder}
 			className={icon ? `input__${icon}` : 'input'}
-			// className={className ? `__input${className}`: null}
-			//onChange
+			onChange={fn}
 		/>
 	);
 }
