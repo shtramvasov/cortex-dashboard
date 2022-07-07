@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const pool = require('./database');
 const jwtGenerator = require('./jwtGenerator');
+const validInfo = require('./validInfo');
 
 // register
-router.post('/registration', async (req, res) => {
+router.post('/registration', validInfo, async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await pool.query
@@ -24,7 +25,7 @@ router.post('/registration', async (req, res) => {
 
 
 // login
-router.post('/login', async (req, res) => {
+router.post('/login', validInfo, async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await pool.query
