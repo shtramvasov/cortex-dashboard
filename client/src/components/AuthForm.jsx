@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-function AuthForm({method, formSubmit, buttonText = 'Отправить'}) {
+function AuthForm({ method, formSubmit, buttonText = 'Отправить' }) {
 	const {
 		register,
 		formState: { errors },
@@ -9,38 +9,41 @@ function AuthForm({method, formSubmit, buttonText = 'Отправить'}) {
 	} = useForm();
 
 	return (
-		<form method={method} onSubmit={handleSubmit(formSubmit)}>
-			<input
-				placeholder='Пользователь'
-				className='input__user'
-				{...register('username', { required: 'Введите имя пользователя' })}
-			/>
-			{errors?.username && (
-				<p className='description error'>
-					{errors?.username?.message || 'Ошибка заполнения'}
-				</p>
-			)}
-			<input
-				type='password'
-				placeholder='Пароль'
-				className='input__password'
-				{...register('password', {
-					required: 'Введите пароль',
-					minLength: {
-						value: 4,
-						message: 'Пароль как минимум 4 символа',
-					},
-					maxLength: {
-						value: 12,
-						message: 'Пароль не больше 12 символов',
-					},
-				})}
-			/>
-			{errors?.password && (
-				<p className='description error'>
-					{errors?.password?.message || 'Ошибка заполнения'}
-				</p>
-			)}
+		<form
+			className='loginpage__form'
+			method={method}
+			onSubmit={handleSubmit(formSubmit)}>
+      <input
+        placeholder='Пользователь'
+        className='input__user'
+        {...register('username', { required: 'Введите имя пользователя' })}
+      />
+      {errors?.username && (
+        <p className='description error'>
+          {errors?.username?.message || 'Ошибка заполнения'}
+        </p>
+      )}
+      <input
+        type='password'
+        placeholder='Пароль'
+        className='input__password'
+        {...register('password', {
+          required: 'Введите пароль',
+          minLength: {
+            value: 4,
+            message: 'Пароль как минимум 4 символа',
+          },
+          maxLength: {
+            value: 12,
+            message: 'Пароль не больше 12 символов',
+          },
+        })}
+      />
+      {errors?.password && (
+        <p className='description error'>
+          {errors?.password?.message || 'Ошибка заполнения'}
+        </p>
+      )}
 			<button type='submit'>{buttonText}</button>
 		</form>
 	);

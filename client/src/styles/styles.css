@@ -51,7 +51,7 @@ p.description {
 p.error {
   color: #FB7185;
   margin-top: -1.5rem;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 h1,
@@ -79,9 +79,6 @@ label {
   color: #9CA3AF;
   gap: 1rem;
 }
-label p.error {
-  margin-top: -2.5rem;
-}
 
 .flex {
   display: flex;
@@ -97,6 +94,7 @@ label p.error {
 
 .jcc {
   justify-content: center;
+  align-items: center;
 }
 
 .jcsb {
@@ -117,6 +115,14 @@ label p.error {
 
 .pb-80 {
   padding-bottom: 5rem;
+}
+
+img {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  width: 100%;
+  height: auto;
 }
 
 input,
@@ -208,4 +214,27 @@ button__page, .button__page {
 button__page:hover, .button__page:hover {
   color: #3F3F46;
   background-color: #E7E5E4;
+}
+
+.loginpage {
+  margin: 5rem auto;
+  max-width: 31rem;
+  padding: 0 1.5rem;
+}
+.loginpage__form {
+  width: 100%;
+}
+.loginpage__form button {
+  margin-top: 3.5rem;
+}
+.loginpage__actions {
+  gap: 1rem;
+}
+.loginpage__dummydata {
+  margin-top: 5.5rem;
+  max-width: 100%;
+}
+.loginpage__dummydata div {
+  margin-top: 0.5rem;
+  gap: 1.5rem;
 }/*# sourceMappingURL=styles.css.map */

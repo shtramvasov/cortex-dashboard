@@ -1,0 +1,26 @@
+.loginpage {
+  margin: 5rem auto;
+  max-width: 31rem;
+  padding: 0 1.5rem;
+
+  &__form { 
+    width: 100%;
+
+    button {
+      margin-top: 3.5rem;
+    }
+  }
+  &__actions {
+    gap: 1rem;
+  }
+
+  &__dummydata {
+    margin-top: 5.5rem;
+    max-width: 100%;
+
+    div {
+      margin-top: 0.5rem;
+      gap: 1.5rem;
+    }
+  }
+}
