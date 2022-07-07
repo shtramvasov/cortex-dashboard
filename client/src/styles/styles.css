@@ -18,6 +18,10 @@ html {
   font-weight: 400;
 }
 
+body {
+  background-color: #FAFAF9;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: 600;
@@ -37,21 +41,23 @@ p.bold {
   font-weight: 500;
 }
 p.light {
+  color: #9CA3AF;
   font-weight: 300;
 }
 p.description {
   font-size: 0.875rem;
   font-weight: 300;
 }
+p.error {
+  color: #FB7185;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
 
 h1,
 h2,
 p {
   color: #3F3F46;
-}
-
-p.light {
-  color: #9CA3AF;
 }
 
 a {
@@ -66,10 +72,15 @@ a:hover {
 }
 
 label {
+  display: flex;
+  flex-direction: column;
   font-size: 1.125rem;
   font-weight: 500;
   color: #9CA3AF;
   gap: 1rem;
+}
+label p.error {
+  margin-top: -2.5rem;
 }
 
 .flex {
