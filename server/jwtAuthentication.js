@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require('./database');
 const jwtGenerator = require('./jwtGenerator');
 const validInfo = require('./validInfo');
+const validation = require('./validation')
 
 // register
 router.post('/registration', validInfo, async (req, res) => {
@@ -22,7 +23,6 @@ router.post('/registration', validInfo, async (req, res) => {
     res.status(500).send(err.message);
   }
 });
-
 
 // login
 router.post('/login', validInfo, async (req, res) => {
@@ -45,6 +45,16 @@ router.post('/login', validInfo, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send(err.message);
+  }
+});
+
+// validate token
+router.get('/validate', validation, async (req, res) => {
+  try {
+    res.json(true);
+  } catch (error) {
+    console.error(err.message);
+    res.status(500).send(err.message)
   }
 });
 

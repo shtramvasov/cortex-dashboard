@@ -9,6 +9,7 @@ module.exports = function(req, res, next) {
     }
     const payload = jwt.verify(token, process.env.jwtSecret);
     req.user = payload.user;
+    next();
   } catch (err) {
     res.status(403).json('Неверный токен');
   }
