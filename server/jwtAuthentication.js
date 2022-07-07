@@ -12,7 +12,8 @@ router.post('/registration', async (req, res) => {
       return res.status(401).json('Такой пользователь уже существует');
     }
     const newUser = await pool.query
-      ('INSERT INTO users (username, password) VALUES ($1, $2)', [username, password]);
+      ('INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *', [username, password]);
+      res.json(newUser.rows[0]);
   } catch (err) {
     console.error(err.message);
     res.status(500).send(err.message);
