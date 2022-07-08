@@ -215,6 +215,9 @@ button__page:hover, .button__page:hover {
   color: #3F3F46;
   background-color: #E7E5E4;
 }
+button.Toastify__close-button, .button.Toastify__close-button {
+  display: none;
+}
 
 .loginpage {
   margin: 5rem auto;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import AuthForm from '../components/AuthForm';
 import cortexLogo from '../images/logo.svg';
 
@@ -15,7 +16,13 @@ function RegistrationPage({ setAuth }) {
       const parseRes = await response.json();
       localStorage.setItem('token', parseRes.token);
       localStorage.setItem('username', data.username);
-      setAuth(true);
+      if (parseRes.token) {
+				toast.success(`Добро пожаловать, ${data.username}`);
+				setAuth(true);
+			} else {
+				setAuth(false);
+				toast.error(parseRes);
+			}
     } catch (err) {
       console.error(err.message)
     }

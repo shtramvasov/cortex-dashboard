@@ -46,4 +46,8 @@ button, .button {
       background-color: $outline-gray;
     }
   }
+
+  &.Toastify__close-button {
+    display: none;
+  }
 }
