@@ -3,10 +3,10 @@ import Sidebar from '../components/Sidebar';
 
 function DashboardPage() {
   return (
-		<>
-			<div>Dashboard</div>
+		<section className='app-wrapper flex'>
       <Sidebar />
-		</>
+			<div>Dashboard</div>
+		</section>
 	);
 }
 

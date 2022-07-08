@@ -125,6 +125,11 @@ img {
   height: auto;
 }
 
+.app-wrapper {
+  flex-wrap: wrap;
+  gap: 3.4rem;
+}
+
 input,
 .input {
   font-family: "Inter", sans-serif;
@@ -240,4 +245,69 @@ button.Toastify__close-button, .button.Toastify__close-button {
 .loginpage__dummydata div {
   margin-top: 0.5rem;
   gap: 1.5rem;
+}
+
+.sidebar {
+  padding-top: 3.5rem;
+  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  max-width: 15.625rem;
+  box-shadow: 4px 0 8px 4px #F3F3F3;
+}
+.sidebar__logo {
+  max-width: 60%;
+  margin: 0 auto 10rem;
+}
+.sidebar__menu {
+  gap: 1rem;
+}
+.sidebar__menu a {
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+  color: #9CA3AF;
+  padding: 1rem 1rem 1rem 2.75rem;
+  margin: 0 0.75rem;
+  border-radius: 8px;
+}
+.sidebar__menu a.active {
+  background-color: #A78BFA;
+  color: #FAFAF9;
+}
+.sidebar__menu__dashboard {
+  background-image: url("../images/Icon-dashboard.svg");
+}
+.sidebar__menu__dashboard.active {
+  background-image: url("../images/Icon-dashboard-active.svg");
+}
+.sidebar__menu__products {
+  background-image: url("../images/Icon-products.svg");
+}
+.sidebar__menu__products.active {
+  background-image: url("../images/Icon-products-active.svg");
+}
+.sidebar__menu__orders {
+  background-image: url("../images/Icon-orders.svg");
+}
+.sidebar__menu__orders.active {
+  background-image: url("../images/Icon-orders-active.svg");
+}
+.sidebar__menu__settings {
+  background-image: url("../images/Icon-settings.svg");
+}
+.sidebar__menu__settings.active {
+  background-image: url("../images/Icon-settings-active.svg");
+}
+.sidebar__userblock {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0 0.75rem;
+  position: absolute;
+  top: 90vh;
+}
+.sidebar__userblock p::first-letter {
+  text-transform: uppercase;
 }/*# sourceMappingURL=styles.css.map */

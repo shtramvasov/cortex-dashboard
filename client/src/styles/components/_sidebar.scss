@@ -1,0 +1,73 @@
+.sidebar {
+  padding-top: 3.5rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  max-width: 15.625rem;
+  box-shadow: 4px 0 8px 4px #F3F3F3;
+  
+  &__logo {
+    max-width: 60%;
+    margin: 0 auto 10rem;
+  }
+
+  &__menu {
+    gap: 1rem;
+
+    a {
+      background-repeat: no-repeat;
+      background-position: 1rem center;
+      color: $font-gray;
+      padding: 1rem 1rem 1rem 2.75rem;
+      margin: 0 0.75rem;
+      border-radius: $border-raduis;
+
+      &.active {
+        background-color: $violet;
+        color: $lightgray;
+      }
+    }
+
+    &__dashboard {
+      background-image: url('../images/Icon-dashboard.svg');
+
+      &.active {
+        background-image: url('../images/Icon-dashboard-active.svg');
+      }
+    }
+    &__products {
+      background-image: url('../images/Icon-products.svg');
+
+      &.active {
+        background-image: url('../images/Icon-products-active.svg');
+      }
+    }
+    &__orders {
+      background-image: url('../images/Icon-orders.svg');
+
+      &.active {
+        background-image: url('../images/Icon-orders-active.svg');
+      }
+    }
+    &__settings {
+      background-image: url('../images/Icon-settings.svg');
+
+      &.active {
+        background-image: url('../images/Icon-settings-active.svg');
+      }
+    }
+  }
+  &__userblock {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin: 0 0.75rem;
+    position: absolute;
+    top: 90vh;
+
+    p::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
