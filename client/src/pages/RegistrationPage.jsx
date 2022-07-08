@@ -14,6 +14,7 @@ function RegistrationPage({ setAuth }) {
       });
       const parseRes = await response.json();
       localStorage.setItem('token', parseRes.token);
+      localStorage.setItem('username', data.username);
       setAuth(true);
     } catch (err) {
       console.error(err.message)

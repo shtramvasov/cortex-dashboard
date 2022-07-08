@@ -15,6 +15,7 @@ function LoginPage({ setAuth }) {
 			});
 			const parseRes = await response.json();
 			localStorage.setItem('token', parseRes.token);
+      localStorage.setItem('username', data.username);
       parseRes.token ? setAuth(true) : setAuth(false);
 		} catch (err) {
 			console.error(err.message);

@@ -16,11 +16,11 @@ function App() {
 		<Routes>
 			<Route
 				path='/'
-				element={isAuthenticated ? <DashboardPage setAuth={setAuth}/> : <Navigate to='/login' />}
+				element={isAuthenticated ? <DashboardPage /> : <Navigate to='/login' />}
 			/>
 			<Route
 				path='/products'
-				element={isAuthenticated ? <ProductsPage setAuth={setAuth}/> : <Navigate to='/login' />}
+				element={isAuthenticated ? <ProductsPage /> : <Navigate to='/login' />}
 			/>
 			<Route
 				path='/login'

@@ -10,6 +10,10 @@ app.use(express.json());
 // login and register
 app.use('', require('./jwtAuthentication'));
 
+// app route
+app.use('/', require('./approute'));
+
+
 app.listen(5000, () => {
   console.log('server is running, PORT 5000') 
 });
