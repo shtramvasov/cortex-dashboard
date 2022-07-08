@@ -4,7 +4,6 @@ const validation = require('./validation');
 
 router.get('/', validation, async (req, res) => {
   try {
-    // res.json(req.user)
     const user = await pool.query
       ('SELECT username FROM users WHERE id = $1', [req.user]);
     res.json(user.rows[0]);

@@ -4,9 +4,20 @@ import AuthForm from '../components/AuthForm';
 import cortexLogo from '../images/logo.svg';
 
 
-function RegistrationPage() {
-	const formSubmit = (data) => {
-		//TODO: req logic
+function RegistrationPage({ setAuth }) {
+	const formSubmit = async (data) => {
+    try {
+      const response = await fetch('http://localhost:5000/registration', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      const parseRes = await response.json();
+      localStorage.setItem('token', parseRes.token);
+      setAuth(true);
+    } catch (err) {
+      console.error(err.message)
+    }
 	};
 
 	return (

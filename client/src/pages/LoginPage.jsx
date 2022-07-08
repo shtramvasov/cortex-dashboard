@@ -5,9 +5,20 @@ import cortexLogo from '../images/logo.svg';
 import userIcon from '../images/Icon-user.svg';
 import userPassword from '../images/Icon-password.svg';
 
-function LoginPage() {
-	const formSubmit = (data) => {
-		//TODO: req logic
+function LoginPage({ setAuth }) {
+	const formSubmit = async (data) => {
+    try {
+			const response = await fetch('http://localhost:5000/login', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(data),
+			});
+			const parseRes = await response.json();
+			localStorage.setItem('token', parseRes.token);
+      parseRes.token ? setAuth(true) : setAuth(false);
+		} catch (err) {
+			console.error(err.message);
+		}
 	};
 
 	return (
@@ -16,23 +27,24 @@ function LoginPage() {
 			<AuthForm
 				method={'POST'}
 				formSubmit={formSubmit}
+				setAuth={setAuth}
 				buttonText={'Войти в аккаунт'}
 			/>
 			<p className='light loginpage__actions flex'>
 				Ещё нет аккаунта?
 				<Link to={'/registration'}>Регистрация</Link>
 			</p>
-			<p className='light description loginpage__dummydata flex cols'>
-				Данные тестового аккаунта:
+			<div className='loginpage__dummydata flex cols'>
+				<p className='light description'>Данные тестового аккаунта:</p>
 				<div className='flex jcc'>
-					<span>
+					<p className='light description'>
 						<img src={userIcon} alt='Пользователь' /> cortex
-					</span>
-					<span>
+					</p>
+					<p className='light description'>
 						<img src={userPassword} alt='Пользователь' /> 1234
-					</span>
+					</p>
 				</div>
-			</p>
+			</div>
 		</section>
 	);
 }
