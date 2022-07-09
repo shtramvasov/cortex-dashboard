@@ -10,7 +10,6 @@ function DashboardPage() {
 		try {
 			const response = await fetch('http://localhost:5000/orders');
 			const jsonData = await response.json();
-      console.log(jsonData); // TODO: delete after connect front to back
 			setOrders(jsonData);
 		} catch (err) {
 			console.error(err.message);
