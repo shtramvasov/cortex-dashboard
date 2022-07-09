@@ -13,6 +13,15 @@ app.use('', require('./jwtAuthentication'));
 // app route
 app.use('/', require('./approute'));
 
+// get orders
+app.get ('/orders', async (req, res) => {
+  try {
+    const allOrders = await pool.query("SELECT * FROM orders");
+    res.json(allOrders.rows); 
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 app.listen(5000, () => {
   console.log('server is running, PORT 5000') 

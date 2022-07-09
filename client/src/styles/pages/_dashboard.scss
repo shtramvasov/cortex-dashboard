@@ -1,0 +1,29 @@
+.dashboardpage {
+
+  &__warning {
+    gap: 1rem;
+    border-radius: $border-raduis;
+    background-color: $warning-bg;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid $warning-outline;
+
+   p {
+    color: $font-warning;
+   }
+  }
+
+  &__statistics {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    h2 {
+      padding-bottom: 2rem;
+    }
+
+    &__card {
+      flex-grow: 3;
+      width: auto;
+    }
+  }
+}
