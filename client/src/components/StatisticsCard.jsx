@@ -4,7 +4,6 @@ import declineIcon from '../images/Icon-decline.svg';
 
 function StatisticsCard({ title, timePeriod, timeComparison, currentValue, dynamicsValue }) {
   const change = (currentValue / dynamicsValue) * 100;
-  console.log(change);
 	return (
 		<div className='dashboardpage__statistics__card card card--small'>
 			<h2>{title}</h2>
