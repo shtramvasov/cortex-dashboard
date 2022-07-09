@@ -22,15 +22,23 @@ function DashboardStatistics({ data }) {
 	}, 0);
 	const weeklySales = data.reduce((total, order) => {
 		if (moment(order.order_date).format('YYYY-MM-DD') >= lastWeek) {
-			total = total + order.price * order.quantity;
+			total += order.price * order.quantity;
 		}
 		return total;
 	}, 0);
 
-  
+  const AverageCheck = data.reduce((total, order) => {
+    return (total += Math.round((order.price * order.quantity) / data.length));
+  }, 0);
+  const weeklyAverageCheck = data.reduce((total, order) => {
+    if (moment(order.order_date).format('YYYY-MM-DD') >= lastWeek) {
+      total += order.price * order.quantity;
+    }
+    return Math.round(total / weeklyOrders.length);
+  }, 0);
 
+  //dummydata
 
-	console.log(weeklySales); // delete
 	return (
 		<section className='dashboardpage__statistics flex jcc'>
 			<StatisticsCard
@@ -49,10 +57,10 @@ function DashboardStatistics({ data }) {
 			/>
 			<StatisticsCard
 				title='Средний чек'
-				timePeriod='За месяц'
+				timePeriod='За неделю'
 				timeComparison='За все время'
-				currentValue={'16929'}
-				dynamicsValue={''}
+				currentValue={weeklyAverageCheck}
+				dynamicsValue={AverageCheck}
 			/>
 		</section>
 	);

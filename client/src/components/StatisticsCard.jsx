@@ -17,7 +17,9 @@ function StatisticsCard({ title, timePeriod, timeComparison, currentValue, dynam
 			<div className='flex jcsb'>
 				<p className='light'>{timeComparison}: {dynamicsValue}</p>
 				<p className='light'>
-					<img src={growthIcon} alt='' /> {Math.round(change)}%
+					<img 
+            src={change >= 0 ? growthIcon : declineIcon} 
+            alt={timeComparison} /> {Math.round(change)}%
 				</p>
 			</div>
 		</div>
