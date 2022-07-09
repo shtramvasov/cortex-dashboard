@@ -1,11 +1,12 @@
 .sidebar {
+  background-color: $white;
   padding-top: 3.5rem;
   flex-wrap: wrap;
   position: sticky;
   top: 0;
   height: 100vh;
   max-width: 15.625rem;
-  box-shadow: 4px 0 8px 4px #F3F3F3;
+  box-shadow: 4px 0 8px 4px #F8F8F8;
   
   &__logo {
     max-width: 60%;
@@ -14,6 +15,7 @@
 
   &__menu {
     gap: 1rem;
+    width: 100%;
 
     a {
       background-repeat: no-repeat;
@@ -71,3 +73,41 @@
     }
   }
 }
+
+@media (max-width: $screen-small) {
+  .sidebar {
+    flex-direction: row;
+    padding-top: 0;
+    height: 3.5rem;
+    max-width: 100vw;
+    width: 100%;
+    flex-wrap: wrap;
+
+    &__logo, &__userblock {
+      display: none;
+    }
+    &__menu {
+      gap: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        margin: 0 0.35rem;
+        padding-left: 2.75rem;
+      }
+    }
+  }
+
+  @media (max-width: $phone-small) {
+    .sidebar {
+        a {
+            text-indent: 200%;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 1rem;
+            background-position: center;
+          }
+      }
+    }
+  }
