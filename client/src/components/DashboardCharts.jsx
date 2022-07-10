@@ -41,7 +41,7 @@ function DashboardCharts({ data }) {
 					</AreaChart>
 				</ResponsiveContainer>
 			</div>
-			<div className='dashboardpage__chart card card--small flex cols mb-32'>
+			<div className='dashboardpage__chart card card--small flex cols'>
 				<h2>Количество заказов за неделю</h2>
 				<ResponsiveContainer width='99%' height={400}>
 					<AreaChart data={data}>

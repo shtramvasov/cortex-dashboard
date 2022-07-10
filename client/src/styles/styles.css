@@ -204,6 +204,19 @@ input__search,
   background-image: url("../images/Icon-search.svg");
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9CA3AF;
+  border-radius: 8px;
+}
+
 button, .button {
   font-family: "Inter", sans-serif;
   border: none;

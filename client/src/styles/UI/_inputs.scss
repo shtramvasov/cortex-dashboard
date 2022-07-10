@@ -38,3 +38,18 @@ input,
     background-image: url('../images/Icon-search.svg');
   }
 }
+
+// scrollbar
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $font-gray;
+  border-radius: $border-raduis;
+}
