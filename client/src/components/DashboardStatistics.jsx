@@ -3,10 +3,10 @@ import moment from 'moment';
 import StatisticsCard from './StatisticsCard';
 
 function DashboardStatistics({ data }) {
+  
+  // production code
 	const today = moment().format('YYYY-MM-DD');
   const lastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
-
-  // production code
 	const todayOrders = data.filter(
 		(order) => moment(order.order_date).format('YYYY-MM-DD') == today
 	);
@@ -38,9 +38,17 @@ function DashboardStatistics({ data }) {
   }, 0);
 
   //dummydata
+  // const [
+	// 	todaySales,
+	// 	weeklySales,
+	// 	todayOrders,
+	// 	weeklyOrders,
+	// 	AverageCheck,
+	// 	weeklyAverageCheck,
+	// ] = ['16929', '88745', '12', '327', '1117', '1205'];
 
 	return (
-		<section className='dashboardpage__statistics flex jcc'>
+		<section className='dashboardpage__statistics mb-32 flex jcc'>
 			<StatisticsCard
 				title='Продажи'
 				timePeriod='За сегодня'

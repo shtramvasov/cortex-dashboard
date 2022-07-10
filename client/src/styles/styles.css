@@ -141,9 +141,6 @@ img {
 .card {
   background-color: #fff;
   box-shadow: 0px 4px 8px 4px rgba(245, 245, 244, 0.05);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .card--small {
   padding: 2rem 1.5rem;
@@ -298,6 +295,9 @@ button.Toastify__close-button, .button.Toastify__close-button {
 .dashboardpage__statistics__card {
   flex-grow: 3;
   width: auto;
+}
+.dashboardpage__chart {
+  gap: 2rem;
 }
 
 .sidebar {

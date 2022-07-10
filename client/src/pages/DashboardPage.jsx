@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import DashboardCharts from '../components/DashboardCharts';
 import DashboardStatistics from '../components/DashboardStatistics';
 import Sidebar from '../components/Sidebar';
 import warningIcon from '../images/icon-warning.svg';
@@ -31,7 +32,8 @@ function DashboardPage() {
 						В данный момент в сводке используются демонстрационные данные
 					</p>
 				</div>
-        <DashboardStatistics data={orders} />
+				<DashboardStatistics data={orders} />
+				<DashboardCharts data={orders} />
 			</section>
 		</section>
 	);
