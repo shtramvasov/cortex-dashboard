@@ -56,10 +56,14 @@ img {
 .card {
   background-color: $white;
   box-shadow: $shadow;
+  border-radius: $border-raduis;
   // width: fit-content;
 
   &--small {
     padding: 2rem 1.5rem;
+  }
+  &--big {
+    padding: 4rem;
   }
 }
 

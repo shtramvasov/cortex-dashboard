@@ -75,7 +75,7 @@ label {
   display: flex;
   flex-direction: column;
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #9CA3AF;
   gap: 1rem;
 }
@@ -141,9 +141,13 @@ img {
 .card {
   background-color: #fff;
   box-shadow: 0px 4px 8px 4px rgba(245, 245, 244, 0.05);
+  border-radius: 8px;
 }
 .card--small {
   padding: 2rem 1.5rem;
+}
+.card--big {
+  padding: 4rem;
 }
 
 @media (max-width: 680px) {
@@ -310,6 +314,23 @@ button.Toastify__close-button, .button.Toastify__close-button {
 }
 .dashboardpage__chart {
   gap: 2rem;
+}
+
+.settingspage {
+  margin: 3rem auto;
+}
+.settingspage__wrapper {
+  margin: 0 auto;
+  max-width: 36rem;
+}
+.settingspage__wrapper img {
+  height: 7.5rem;
+}
+.settingspage__wrapper h1, .settingspage__wrapper img {
+  margin: 0 auto;
+}
+.settingspage__form {
+  margin-top: 2rem;
 }
 
 .sidebar {

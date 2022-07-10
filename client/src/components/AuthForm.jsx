@@ -16,7 +16,13 @@ function AuthForm({ method, formSubmit, buttonText = 'Отправить' }) {
       <input
         placeholder='Пользователь'
         className='input__user'
-        {...register('username', { required: 'Введите имя пользователя' })}
+        {...register('username', { 
+          required: 'Введите имя пользователя',
+          maxLength: {
+            value: 12,
+            message: 'Имя пользователя не больше 12 символов'
+          }
+         })}
       />
       {errors?.username && (
         <p className='description error'>

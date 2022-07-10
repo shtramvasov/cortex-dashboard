@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import ProductsPage from './pages/ProductsPage';
 import RegistrationPage from './pages/RegistrationPage';
+import SettingsPage from './pages/SettingsPage';
 
 
 function App() {
@@ -41,6 +42,10 @@ function App() {
 			<Route
 				path='/products'
 				element={isAuthenticated ? <ProductsPage /> : <Navigate to='/login' />}
+			/>
+			<Route
+				path='/settings'
+				element={isAuthenticated ? <SettingsPage /> : <Navigate to='/login' />}
 			/>
 			<Route
 				path='/login'
