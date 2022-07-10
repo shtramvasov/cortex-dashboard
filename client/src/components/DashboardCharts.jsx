@@ -10,7 +10,7 @@ function DashboardCharts({ data }) {
 			<h1>Динамика продаж и заказов</h1>
 			<div className='dashboardpage__chart card card--small flex cols mb-32'>
 				<h2>Оборот продаж за неделю</h2>
-				<ResponsiveContainer width='99%' height={400}>
+				<ResponsiveContainer width='99%' height={350}>
 					<AreaChart data={data}>
 						<XAxis
 							dataKey='order_date'
@@ -44,7 +44,7 @@ function DashboardCharts({ data }) {
 			</div>
 			<div className='dashboardpage__chart card card--small flex cols'>
 				<h2>Количество заказов за неделю</h2>
-				<ResponsiveContainer width='99%' height={400}>
+				<ResponsiveContainer width='99%' height={350}>
 					<BarChart data={data}>
 						<XAxis
 							dataKey='order_date'
@@ -52,7 +52,7 @@ function DashboardCharts({ data }) {
 								moment(order_date).locale('ru').format('dddd')
 							}
 							dy={12}
-							stroke='#9CA3AF'
+							stroke='#E7E5E4'
 							tick={{ fill: '#9CA3AF', fontSize: 14 }}
 							style={{ fontFamily: 'Inter' }}
 						/>
@@ -61,7 +61,7 @@ function DashboardCharts({ data }) {
 							type='number'
 							dx={-12}
 							tickCount={6}
-							stroke='#9CA3AF'
+							stroke='#E7E5E4'
 							domain={[0, 'dataMax']}
 							tick={{ fill: '#9CA3AF', fontSize: 14 }}
 							style={{ fontFamily: 'Inter' }}

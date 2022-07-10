@@ -48,7 +48,7 @@ function DashboardStatistics({ data }) {
 	] = ['16929', '88745', '12', '327', '1117', '1205'];
 
 	return (
-		<section className='dashboardpage__statistics mb-32 flex jcc'>
+		<section className='dashboardpage__statistics mb-80 flex jcc'>
 			<StatisticsCard
 				title='Продажи'
 				timePeriod='За сегодня'

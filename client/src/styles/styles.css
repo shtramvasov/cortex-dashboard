@@ -109,6 +109,14 @@ label {
   margin-bottom: 2rem;
 }
 
+.mb-64 {
+  margin-bottom: 4rem;
+}
+
+.mb-80 {
+  margin-bottom: 5rem;
+}
+
 .pb-48 {
   padding-bottom: 3rem;
 }

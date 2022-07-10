@@ -1,16 +1,17 @@
-import React from 'react'
+import React from 'react';
 import SettingsForm from '../components/SettingsForm';
-import Sidebar from '../components/Sidebar'
+import Sidebar from '../components/Sidebar';
 
 function SettingsPage() {
-  return (
+
+	return (
 		<section className='app-wrapper flex'>
 			<Sidebar />
 			<section className='wrapper settingspage'>
-        <SettingsForm />
-      </section>
+				<SettingsForm method={'POST'} />
+			</section>
 		</section>
 	);
 }
 
-export default SettingsPage
+export default SettingsPage;

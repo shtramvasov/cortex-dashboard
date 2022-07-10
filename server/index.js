@@ -23,6 +23,19 @@ app.get ('/orders', async (req, res) => {
   }
 });
 
+// update password
+app.post ('/settings', require('./approute'), async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const updatePassword = await pool.query
+    ("UPDATE users SET password = $2 WHERE username = $1 RETURNING username", [username, password]);
+    res.json(updatePassword.rows[0]); 
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+
 app.listen(5000, () => {
   console.log('server is running, PORT 5000') 
 });

@@ -28,6 +28,12 @@
 .mb-32 {
   margin-bottom: 2rem;
 }
+.mb-64 {
+  margin-bottom: 4rem;
+}
+.mb-80 {
+  margin-bottom: 5rem;
+}
 .pb-48 {
   padding-bottom: 3rem;
 }
@@ -57,7 +63,6 @@ img {
   background-color: $white;
   box-shadow: $shadow;
   border-radius: $border-raduis;
-  // width: fit-content;
 
   &--small {
     padding: 2rem 1.5rem;
