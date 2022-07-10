@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis } from 'recharts';
+import { ResponsiveContainer, AreaChart, Area, BarChart, Bar,  XAxis, YAxis } from 'recharts';
 import moment from 'moment';
 import 'moment/locale/ru';
 
@@ -28,15 +28,16 @@ function DashboardCharts({ data }) {
 							dx={-12}
 							tickCount={6}
 							stroke='#E7E5E4'
-							domain={[0, 'dataMax + 8000']}
+							domain={[0, 'dataMax + 1000']}
 							tick={{ fill: '#9CA3AF', fontSize: 14 }}
 							style={{ fontFamily: 'Inter' }}
 						/>
 						<Area
 							type='basis'
 							dataKey='price'
-							stroke='#8B5CF6'
+							stroke='#fff'
 							fill='#A78BFA'
+							fillOpacity='0.9'
 						/>
 					</AreaChart>
 				</ResponsiveContainer>
@@ -44,14 +45,14 @@ function DashboardCharts({ data }) {
 			<div className='dashboardpage__chart card card--small flex cols'>
 				<h2>Количество заказов за неделю</h2>
 				<ResponsiveContainer width='99%' height={400}>
-					<AreaChart data={data}>
+					<BarChart data={data}>
 						<XAxis
 							dataKey='order_date'
 							tickFormatter={(order_date) =>
 								moment(order_date).locale('ru').format('dddd')
 							}
 							dy={12}
-							stroke='#E7E5E4'
+							stroke='#9CA3AF'
 							tick={{ fill: '#9CA3AF', fontSize: 14 }}
 							style={{ fontFamily: 'Inter' }}
 						/>
@@ -60,18 +61,13 @@ function DashboardCharts({ data }) {
 							type='number'
 							dx={-12}
 							tickCount={6}
-							stroke='#E7E5E4'
+							stroke='#9CA3AF'
 							domain={[0, 'dataMax']}
 							tick={{ fill: '#9CA3AF', fontSize: 14 }}
 							style={{ fontFamily: 'Inter' }}
 						/>
-						<Area
-							type='basis'
-							dataKey='quantity'
-							stroke='#8B5CF6'
-							fill='#A78BFA'
-						/>
-					</AreaChart>
+						<Bar dataKey='quantity' fill='#A78BFA' />
+					</BarChart>
 				</ResponsiveContainer>
 			</div>
 		</section>

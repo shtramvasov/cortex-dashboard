@@ -38,14 +38,14 @@ function DashboardStatistics({ data }) {
   }, 0);
 
   //dummydata
-  // const [
-	// 	todaySales,
-	// 	weeklySales,
-	// 	todayOrders,
-	// 	weeklyOrders,
-	// 	AverageCheck,
-	// 	weeklyAverageCheck,
-	// ] = ['16929', '88745', '12', '327', '1117', '1205'];
+  const [
+		dummytodaySales,
+		dummyweeklySales,
+		dummytodayOrders,
+		dummyweeklyOrders,
+		dummyAverageCheck,
+		dummyweeklyAverageCheck,
+	] = ['16929', '88745', '12', '327', '1117', '1205'];
 
 	return (
 		<section className='dashboardpage__statistics mb-32 flex jcc'>
@@ -53,22 +53,22 @@ function DashboardStatistics({ data }) {
 				title='Продажи'
 				timePeriod='За сегодня'
 				timeComparison='За прошлую неделю'
-				currentValue={todaySales}
-				dynamicsValue={weeklySales}
+				currentValue={dummytodaySales}
+				dynamicsValue={dummyweeklySales}
 			/>
 			<StatisticsCard
 				title='Заказы'
 				timePeriod='За сегодня'
 				timeComparison='За прошлую неделю'
-				currentValue={todayOrders.length}
-				dynamicsValue={weeklyOrders.length}
+				currentValue={dummytodayOrders} // .lenght prod
+				dynamicsValue={dummyweeklyOrders} // .lenght prod
 			/>
 			<StatisticsCard
 				title='Средний чек'
 				timePeriod='За неделю'
 				timeComparison='За все время'
-				currentValue={weeklyAverageCheck}
-				dynamicsValue={AverageCheck}
+				currentValue={dummyweeklyAverageCheck}
+				dynamicsValue={dummyAverageCheck}
 			/>
 		</section>
 	);
