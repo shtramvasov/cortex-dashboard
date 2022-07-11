@@ -16,10 +16,7 @@
   &__statistics {
     flex-wrap: wrap;
     gap: 1.5rem;
-
-    h2 {
-      padding-bottom: 2rem;
-    }
+    margin-bottom: 8rem;
 
     &__card {
       flex-grow: 3;
@@ -29,5 +26,24 @@
 
   &__chart {
     gap: 2rem;
+
+    &__tooltip {
+      padding: 1rem;
+      background-color: $white;
+      border-radius: $border-raduis;
+      box-shadow: $shadow;
+      border: 1px solid $lightgray;
+      z-index: 10;
+
+      p {
+        padding-bottom: 0.5rem;
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: $violet;
+      }
+    }
   }
 }

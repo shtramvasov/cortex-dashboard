@@ -312,9 +312,7 @@ button.Toastify__close-button, .button.Toastify__close-button {
 .dashboardpage__statistics {
   flex-wrap: wrap;
   gap: 1.5rem;
-}
-.dashboardpage__statistics h2 {
-  padding-bottom: 2rem;
+  margin-bottom: 8rem;
 }
 .dashboardpage__statistics__card {
   flex-grow: 3;
@@ -322,6 +320,22 @@ button.Toastify__close-button, .button.Toastify__close-button {
 }
 .dashboardpage__chart {
   gap: 2rem;
+}
+.dashboardpage__chart__tooltip {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px 4px rgba(245, 245, 244, 0.05);
+  border: 1px solid #FAFAF9;
+  z-index: 10;
+}
+.dashboardpage__chart__tooltip p {
+  padding-bottom: 0.5rem;
+}
+.dashboardpage__chart__tooltip span {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #A78BFA;
 }
 
 .settingspage {
