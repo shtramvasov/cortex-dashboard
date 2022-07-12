@@ -21,6 +21,13 @@ function OrdersPage() {
 		getOrders();
 	}, []);
 
+	const sortOrders = (type) => {
+		const sortedArray = [...orders].sort((a, b) =>
+			a[type] > b[type] ? -1 : 1
+		);
+		setOrders(sortedArray);
+	};
+
 	return (
 		<section className='app-wrapper flex'>
 			<Sidebar />
@@ -29,10 +36,17 @@ function OrdersPage() {
 				<input
 					type='text'
 					className='input__search'
-					onChange={(event) => {
+					onSelect={(event) => {
 						setResult(event.target.value);
 					}}
 				/>
+        <select onChange={(e) => sortOrders(e.target.value)}>
+          <option value='product_name'>Товар</option>
+          <option value='price'>Стоимость</option>
+          <option value='quantity'>Количество</option>
+          <option value='order_date'>Дата</option>
+          <option value='order_status'>Статус заказа</option>
+        </select>
 				<section className='table pb-48'>
 					<TableHead
 						headers={[
@@ -53,8 +67,8 @@ function OrdersPage() {
 											.toLowerCase()
 											.includes(result.toLowerCase())
 							)
-							.map((order) => (
-								<TableItemOrder order={order} />
+							.map((order, index) => (
+								<TableItemOrder key={index} order={order} />
 							))}
 					</div>
 				</section>

@@ -43,12 +43,10 @@ function ProductsPage() {
 							.filter((product) =>
 								result === ''
 									? product
-									: product.name
-											.toLowerCase()
-											.includes(result.toLowerCase())
+									: product.name.toLowerCase().includes(result.toLowerCase())
 							)
-							.map((product) => (
-								<TableItemProduct product={product} />
+							.map((product, index) => (
+								<TableItemProduct key={index} product={product} />
 							))}
 					</div>
 				</section>

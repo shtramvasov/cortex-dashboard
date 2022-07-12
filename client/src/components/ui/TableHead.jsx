@@ -4,8 +4,8 @@ function TableHead({ headers, deleteButton }) {
   return (
 		<div className='table-head'>
 			<ul className='table-row'>
-        {headers.map(header => (
-          <li className='table-col'>{header}</li>
+        {headers.map((header, index) => (
+          <li key={index} className='table-col'>{header}</li>
         ))}
         {deleteButton
         ? <li className='table-col'></li>: null}

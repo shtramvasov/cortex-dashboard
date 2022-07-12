@@ -179,20 +179,10 @@ img {
 }
 input,
 .input {
-  font-family: "Inter", sans-serif;
   border: none;
-  background-color: #fff;
   color: #3F3F46;
-  font-size: 1.125rem;
   font-weight: 400;
-  border: 1px solid #E7E5E4;
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  transition: ease-in-out 250ms;
   width: 100%;
-  margin-bottom: 2rem;
-  background-repeat: no-repeat;
-  background-position: calc(100% - 1rem) center;
 }
 input ::-moz-placeholder, .input ::-moz-placeholder {
   color: #D4D4D4;
@@ -203,13 +193,6 @@ input :-ms-input-placeholder, .input :-ms-input-placeholder {
 input ::placeholder,
 .input ::placeholder {
   color: #D4D4D4;
-}
-input:hover, input:focus,
-.input:hover,
-.input:focus {
-  outline: none;
-  border: 1px solid #A78BFA;
-  color: #3F3F46;
 }
 input__user,
 .input__user {
@@ -224,6 +207,24 @@ input__search,
   background-image: url("../images/Icon-search.svg");
 }
 
+input, .input, select {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  border: 1px solid #E7E5E4;
+  font-size: 1.125rem;
+  transition: ease-in-out 250ms;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  margin-bottom: 2rem;
+}
+input:hover, input:focus, .input:hover, .input:focus, select:hover, select:focus {
+  outline: none;
+  border: 1px solid #A78BFA;
+  color: #3F3F46;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -235,6 +236,17 @@ input__search,
 ::-webkit-scrollbar-thumb {
   background: #9CA3AF;
   border-radius: 8px;
+}
+
+select {
+  max-width: 15rem;
+  cursor: pointer;
+  font-weight: 300;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #3F3F46;
+  background-image: url("../images/Icon-dropdown.svg");
 }
 
 button, .button {
