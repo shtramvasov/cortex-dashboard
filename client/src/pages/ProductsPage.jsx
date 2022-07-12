@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import TableHead from '../components/ui/TableHead';
 import TableItemProduct from '../components/ui/TableItemProduct';
@@ -33,6 +34,9 @@ function ProductsPage() {
 						setResult(event.target.value);
 					}}
 				/>
+				<Link to={'/products/add'}>
+					<button>Добавить товар</button>
+				</Link>
 				<section className='table pb-48'>
 					<TableHead
 						headers={['#', 'Наименование', 'Стоимость', 'Доступно']}

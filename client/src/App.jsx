@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import ProductsPage from './pages/ProductsPage';
 import EditPage from './pages/EditPage';
+import AddPage from './pages/AddPage';
 import OrdersPage from './pages/OrdersPage';
 import RegistrationPage from './pages/RegistrationPage';
 import SettingsPage from './pages/SettingsPage';
@@ -56,6 +57,10 @@ function App() {
 			<Route
 				path='/settings'
 				element={isAuthenticated ? <SettingsPage /> : <Navigate to='/login' />}
+			/>
+			<Route
+				path='/products/add'
+				element={isAuthenticated ? <AddPage /> : <Navigate to='/login' />}
 			/>
 			<Route
 				path='/login'

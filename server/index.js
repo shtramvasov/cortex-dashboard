@@ -33,12 +33,37 @@ app.get ('/products', async (req, res) => {
   }
 });
 
-//get product
+// get product
 app.get ('/products/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const getProduct = await pool.query("SELECT * FROM products WHERE id = $1", [id]);
     res.json(getProduct.rows[0]);  
+  } catch (err) {
+    console.error(err.message);  
+  }
+});
+
+// edit product
+app.post ('/edit', async (req, res) => {
+  try {
+    const { id, name, description, price, quantity } = req.body;
+    const editProduct = await pool.query
+    ("UPDATE products SET name = $2, description = $3, price = $4, quantity = $5 WHERE id = $1", [id, name, description, price, quantity]);
+    res.json(editProduct.rows[0]);  
+  } catch (err) {
+    console.error(err.message);  
+  }
+
+});
+
+// add product
+app.post ('/add', async (req, res) => {
+  try {
+    const { name, description, price, quantity } = req.body;
+    const addProduct = await pool.query
+        ('INSERT INTO products (name, description, price, quantity) VALUES ($1, $2, $3, $4)', [name, description, price, quantity]);
+    res.json(addProduct.rows[0]);  
   } catch (err) {
     console.error(err.message);  
   }
