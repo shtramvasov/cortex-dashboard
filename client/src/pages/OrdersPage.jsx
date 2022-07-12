@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import moment from 'moment';
+import TableHead from '../components/ui/TableHead';
+import TableItemOrder from '../components/ui/TableItemOrder';
 
 function OrdersPage() {
 	const [orders, setOrders] = useState([]);
-  const [result, setResult] = useState('');
+	const [result, setResult] = useState('');
 
 	const getOrders = async () => {
 		try {
@@ -25,49 +26,36 @@ function OrdersPage() {
 			<Sidebar />
 			<section className='wrapper orderspage'>
 				<h1>Заказы</h1>
-        <input 
-          type='text' 
-          className='input__search'
-          onChange={(event) => {setResult(event.target.value)}}
-        />
+				<input
+					type='text'
+					className='input__search'
+					onChange={(event) => {
+						setResult(event.target.value);
+					}}
+				/>
 				<section className='table pb-48'>
-					<div className='table-head'>
-						<ul className='table-row'>
-							<li className='table-col'>#</li>
-							<li className='table-col'>Товар</li>
-							<li className='table-col'>Стоимость</li>
-							<li className='table-col'>Количество</li>
-							<li className='table-col'>Дата</li>
-							<li className='table-col'>Статус заказа</li>
-						</ul>
-					</div>
+					<TableHead
+						headers={[
+							'#',
+							'Товар',
+							'Стоимость',
+							'Количество',
+							'Дата',
+							'Статус заказа',
+						]}
+					/>
 					<div className='table-body'>
-            {orders.filter(order => {
-              if (result === '') {
-                return order;
-              } else if (order.product_name.toLowerCase().includes(result.toLowerCase())){
-                return order;
-              }
-            }).map(order => (
-            <div key={order.id} className='table-row'>
-              <p className='table-col'>{order.order_key}</p>
-              <div className='table-col table-gr'>
-                <div><img src={`${order.image}`} alt={order.product_name} /></div>
-                <div><p>{order.product_name}</p></div>
-              </div>
-              <p className='table-col'>{order.price} ₽</p>
-              <p className='table-col'>{order.quantity}</p>
-              <p className='table-col'>{moment(order.order_date).locale('ru').format('D MMM')}</p>
-              {order.order_status === 'Пришло' 
-              ? <p className='table-col table-status delivered'><span>{order.order_status}</span></p>
-              : order.order_status === 'В пути' 
-              ? <p className='table-col table-status coming'><span>{order.order_status}</span></p>
-              : order.order_status === 'Ожидает оплаты' 
-              ? <p className='table-col table-status pending'><span>{order.order_status}</span></p>
-              : <p className='table-col table-status rejected'><span>{order.order_status}</span></p>
-              }
-            </div>
-            ))}
+						{orders
+							.filter((order) =>
+								result === ''
+									? order
+									: order.product_name
+											.toLowerCase()
+											.includes(result.toLowerCase())
+							)
+							.map((order) => (
+								<TableItemOrder order={order} />
+							))}
 					</div>
 				</section>
 			</section>
