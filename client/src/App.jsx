@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import ProductsPage from './pages/ProductsPage';
+import OrdersPage from './pages/OrdersPage';
 import RegistrationPage from './pages/RegistrationPage';
 import SettingsPage from './pages/SettingsPage';
 
@@ -42,6 +43,10 @@ function App() {
 			<Route
 				path='/products'
 				element={isAuthenticated ? <ProductsPage /> : <Navigate to='/login' />}
+			/>
+			<Route
+				path='/orders'
+				element={isAuthenticated ? <OrdersPage /> : <Navigate to='/login' />}
 			/>
 			<Route
 				path='/settings'

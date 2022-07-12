@@ -18,8 +18,13 @@ function SettingsForm({ method, buttonText = 'Сохранить изменен�
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data),
 			});
-      toast.success('Пароль успешно изменен 🤫');
-      navigate('/');
+      if (data.username === 'cortex') {
+        toast.error('Пароль для суперадмина нельзя изменять');
+        return;
+      } else {       
+        toast.success('Пароль успешно изменен 🤫');
+        navigate('/');
+      }
 		} catch (err) {
 			console.error(err.message);
 		}

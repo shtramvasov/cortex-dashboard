@@ -27,9 +27,13 @@ app.get ('/orders', async (req, res) => {
 app.post ('/settings', require('./approute'), async (req, res) => {
   try {
     const { username, password } = req.body;
-    const updatePassword = await pool.query
-    ("UPDATE users SET password = $2 WHERE username = $1 RETURNING username", [username, password]);
-    res.json(updatePassword.rows[0]); 
+    if (username === 'cortex') {
+      res.status(418).json('Пароль для суперадмина нельзя изменять');
+    } else {
+        const updatePassword = await pool.query
+        ("UPDATE users SET password = $2 WHERE username = $1 RETURNING username", [username, password]);
+        res.json(updatePassword.rows[0]); 
+    }
   } catch (err) {
     console.error(err.message);
   }

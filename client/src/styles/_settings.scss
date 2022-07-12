@@ -1,3 +1,5 @@
+@import 'colors';
+
 // Global Settings
 *,
 *::after,
@@ -17,30 +19,6 @@ html {
   font-size: 16px;
   font-weight: 400;
 }
-
-// Colors
-$lightgray:#FAFAF9;
-$violet: #A78BFA;
-$violet-hover: #8B5CF6;
-$green: #10B981;
-$red: #FB7185;
-$red-hover: #f43f5e;
-$yellow: #FDE68A;
-$white: #fff;
-$outline-gray: #E7E5E4;
-$placeholder-gray: #D4D4D4;
-$paleblue: #CFD4E7;
-$table-ui: #F1F5F9;
-
-$font-black: #3F3F46;
-$font-gray: #9CA3AF;
-$font-warning: #514016;
-$font-gren: #742727;
-$font-red: #2B522C;
-$font-yellow: #605D46;
-
-$warning-bg: #F5E8D5;
-$warning-outline: #EAD8BD;
 
 // Misc
 $transition: ease-in-out 250ms;
