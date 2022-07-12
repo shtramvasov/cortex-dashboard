@@ -23,6 +23,16 @@ app.get ('/orders', async (req, res) => {
   }
 });
 
+// get products
+app.get ('/products', async (req, res) => {
+  try {
+    const allProducts = await pool.query("SELECT * FROM products");
+    res.json(allProducts.rows); 
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 // update password
 app.post ('/settings', require('./approute'), async (req, res) => {
   try {

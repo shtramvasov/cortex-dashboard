@@ -41,7 +41,7 @@ function OrdersPage() {
 								<p className='table-col'>{order.order_key}</p>
 								<div className='table-col table-gr'>
 									<div>
-										<img src={`${order.image}`} alt='' />
+										<img src={`${order.image}`} alt={order.product_name} />
 									</div>
 									<div>
 										<p>{order.product_name}</p>
