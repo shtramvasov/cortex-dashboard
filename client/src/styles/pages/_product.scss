@@ -1,0 +1,23 @@
+.productpage {
+  margin: 3rem auto;
+
+  &__wrapper {
+      margin: 0 auto;
+      max-width: 58rem;
+  }
+  &__form {
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__column {
+      display: flex; 
+      flex-direction: column;
+      flex: 45%;
+    }
+
+    button {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -462,6 +462,27 @@ button.Toastify__close-button, .button.Toastify__close-button {
   color: #A78BFA;
 }
 
+.productpage {
+  margin: 3rem auto;
+}
+.productpage__wrapper {
+  margin: 0 auto;
+  max-width: 58rem;
+}
+.productpage__form {
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.productpage__form__column {
+  display: flex;
+  flex-direction: column;
+  flex: 45%;
+}
+.productpage__form button {
+  margin-bottom: 0;
+}
+
 .settingspage {
   margin: 3rem auto;
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function TableItemProduct({ product }) {
 	const deleteProduct = async (id) => {
@@ -16,7 +17,7 @@ function TableItemProduct({ product }) {
       <p className='table-col'>{product.id}</p>
       <div className='table-col table-gr'>
         <div><img src={product.image} alt={product.name} /></div>
-        <div><p>{product.name}</p></div>
+        <div><Link to={`/products/${product.id}`} state={product.id}>{product.name}</Link></div>
       </div>
       <p className='table-col'>{product.price} ₽</p>
       <p className='table-col'>{product.quantity}</p>

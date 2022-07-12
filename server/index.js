@@ -33,6 +33,17 @@ app.get ('/products', async (req, res) => {
   }
 });
 
+//get product
+app.get ('/products/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const getProduct = await pool.query("SELECT * FROM products WHERE id = $1", [id]);
+    res.json(getProduct.rows[0]);  
+  } catch (err) {
+    console.error(err.message);  
+  }
+});
+
 // delete product
 app.delete ('/products/:id', async (req, res) => {
   try {
