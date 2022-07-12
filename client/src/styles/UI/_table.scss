@@ -1,0 +1,120 @@
+.table {
+  display: table;
+  font-weight: 300;
+  width: 100%
+}
+
+.table-head {
+  display: table-header-group;
+  background-color: $table-ui;
+  color: $font-gray;
+  border-radius: $border-raduis;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-col {
+  display: table-cell;
+  padding: 1.5rem;
+  vertical-align: middle;
+  font-weight: 300;
+}
+
+.table-body {
+  display: table-row-group;
+  background-color: $white;
+  border-radius: $border-raduis;
+  box-shadow: $shadow;
+
+  .table-col {
+    border-bottom: 1px solid $table-ui;
+    padding: 1.5rem 1rem;
+  }
+}
+
+.table-status {
+ 
+  span {
+    padding: 0.3rem 1rem;
+    border-radius: $border-raduis;
+  }
+  &.delivered {
+    span {
+      background-color: $green;
+    }
+  }
+  &.pending, &.coming {
+    span {
+      background-color: $yellow;
+    }
+  }
+  &.rejected {
+    span {
+      background-color: $red;
+    }
+  }
+}
+
+.table-gr {
+  div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  img {
+    max-height: 65px;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: $screen-medium) {
+  .table-head {
+    display: none;
+  }
+  .table-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    background-color: transparent;
+  }
+
+  .table-gr {
+
+    img {
+      padding-right: 0;
+    }
+  }
+
+  .table-row {
+    display: flex;
+    flex: 40%;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: $border-raduis;
+    box-shadow: $shadow;
+
+    .button__delete {
+        width: 100%;
+      }
+  }
+
+  .table-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+
+    &:first-child {
+      background-color: $table-ui;
+      color: $font-gray
+    }
+  }
+}
+
+@media (max-width: $screen-small) {
+  .table-row {
+    flex: 70%;
+  }
+}

@@ -58,6 +58,15 @@ p {
     margin-top: -1.5rem;
     padding-bottom: 2rem;
   }
+  &.delivered {
+    color: $font-green;
+  }
+  &.pending, &.coming {
+    color: $font-yellow;
+  }
+  &.rejected {
+    color: $font-red;
+  }
 }
 
 h1,

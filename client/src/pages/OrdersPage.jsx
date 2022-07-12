@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import image from '../images/products/coffee.jpg'
+import moment from 'moment';
 
 function OrdersPage() {
-  return (
+	const [orders, setOrders] = useState([]);
+
+	const getOrders = async () => {
+		try {
+			const response = await fetch('http://localhost:5000/orders');
+			const jsonData = await response.json();
+			setOrders(jsonData);
+		} catch (err) {
+			console.error(err.message);
+		}
+	};
+
+	useEffect(() => {
+		getOrders();
+	}, []);
+
+	return (
 		<section className='app-wrapper flex'>
 			<Sidebar />
 			<section className='wrapper orderspage'>
@@ -14,61 +30,47 @@ function OrdersPage() {
 							<li className='table-col'>#</li>
 							<li className='table-col'>Товар</li>
 							<li className='table-col'>Стоимость</li>
+							<li className='table-col'>Количество</li>
 							<li className='table-col'>Дата</li>
 							<li className='table-col'>Статус заказа</li>
-							<li className='table-col'></li>
 						</ul>
 					</div>
 					<div className='table-body'>
-						{/* Тут будет вставка итема */}
-						<div className='table-row'>
-							<p className='table-col'>B576524</p>
-							<div className='table-col table-gr'>
-								<div>
-									<img src={image} alt='' />
+						{orders.map((order) => (
+							<div key={order.id} className='table-row'>
+								<p className='table-col'>{order.order_key}</p>
+								<div className='table-col table-gr'>
+									<div>
+										<img src={`${order.image}`} alt='' />
+									</div>
+									<div>
+										<p>{order.product_name}</p>
+									</div>
 								</div>
-								<div>
-									<a href=''>Джинсы Jeans-Dean</a>
-								</div>
+								<p className='table-col'>{order.price} ₽</p>
+								<p className='table-col'>{order.quantity}</p>
+								<p className='table-col'>
+									{moment(order.order_date).locale('ru').format('D MMM')}
+								</p>
+								{order.order_status === 'Пришло' ? (
+									<p className='table-col table-status delivered'>
+										<span>{order.order_status}</span>
+									</p>
+								) : order.order_status === 'В пути' ? (
+									<p className='table-col table-status coming'>
+										<span>{order.order_status}</span>
+									</p>
+								) : order.order_status === 'Ожидает оплаты' ? (
+									<p className='table-col table-status pending'>
+										<span>{order.order_status}</span>
+									</p>
+								) : (
+									<p className='table-col table-status rejected'>
+										<span>{order.order_status}</span>
+									</p>
+								)}
 							</div>
-							<p className='table-col'>1200 ₽</p>
-							<p className='table-col'>28 июня, 8:24</p>
-							<p className='table-col'>Ожидает оплаты</p>
-							<p className='table-col'><button className='button__delete'></button></p>
-						</div>
-
-						<div className='table-row'>
-							<p className='table-col'>B576524</p>
-							<div className='table-col table-gr'>
-								<div>
-									<img src={image} alt='' />
-								</div>
-								<div>
-									<a href=''>Джинсы Jeans-Dean</a>
-								</div>
-							</div>
-							<p className='table-col'>1200 ₽</p>
-							<p className='table-col'>28 июня, 8:24</p>
-							<p className='table-col'>Ожидает оплаты</p>
-							<p className='table-col'><button className='button__delete'></button></p>
-						</div>
-
-						<div className='table-row'>
-							<p className='table-col'>B576524</p>
-							<div className='table-col table-gr'>
-								<div>
-									<img src={image} alt='' />
-								</div>
-								<div>
-									<a href=''>Джинсы Jeans-Dean</a>
-								</div>
-							</div>
-							<p className='table-col'>1200 ₽</p>
-							<p className='table-col'>28 июня, 8:24</p>
-							<p className='table-col'>Ожидает оплаты</p>
-							<p className='table-col'><button className='button__delete'></button></p>
-						</div>
-						{/* Тут закончится вставка итема */}
+						))}
 					</div>
 				</div>
 			</section>

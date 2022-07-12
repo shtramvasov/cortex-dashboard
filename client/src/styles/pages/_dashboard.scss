@@ -21,6 +21,10 @@
     &__card {
       flex-grow: 3;
       width: auto;
+
+      h2 {
+        padding-bottom: 1rem;
+      }
     }
   }
 
