@@ -33,7 +33,7 @@ function ProductsPage() {
 			<Sidebar />
 			<section className='wrapper productspage'>
 				<h1>Список товаров</h1>
-				<div className='table pb-48'>
+				<section className='table pb-48'>
 					<div className='table-head'>
 						<ul className='table-row'>
 							<li className='table-col'>#</li>
@@ -44,29 +44,25 @@ function ProductsPage() {
 						</ul>
 					</div>
 					<div className='table-body'>
-						{products.map((product) => (
-							<div key={product.id} className='table-row'>
-								<p className='table-col'>{product.id}</p>
-								<div className='table-col table-gr'>
-									<div>
-										<img src={product.image} alt={product.name} />
-									</div>
-									<div>
-										<p>{product.name}</p>
-									</div>
-								</div>
-								<p className='table-col'>{product.price} ₽</p>
-								<p className='table-col'>{product.quantity}</p>
-								<p className='table-col'>
-									<button
-										className='button__delete'
-										onClick={() => deleteProduct(product.id)}
-									></button>
-								</p>
-							</div>
-						))}
+          {products.map((product) => (
+            <div key={product.id} className='table-row'>
+              <p className='table-col'>{product.id}</p>
+              <div className='table-col table-gr'>
+                <div><img src={product.image} alt={product.name} /></div>
+                <div><p>{product.name}</p></div>
+              </div>
+              <p className='table-col'>{product.price} ₽</p>
+              <p className='table-col'>{product.quantity}</p>
+              <p className='table-col'>
+                <button
+                  className='button__delete'
+                  onClick={() => deleteProduct(product.id)}>
+                </button>
+              </p>
+            </div>
+          ))}
 					</div>
-				</div>
+				</section>
 			</section>
 		</section>
 	);
