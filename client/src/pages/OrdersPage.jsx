@@ -4,6 +4,7 @@ import moment from 'moment';
 
 function OrdersPage() {
 	const [orders, setOrders] = useState([]);
+  const [result, setResult] = useState('');
 
 	const getOrders = async () => {
 		try {
@@ -24,6 +25,11 @@ function OrdersPage() {
 			<Sidebar />
 			<section className='wrapper orderspage'>
 				<h1>Заказы</h1>
+        <input 
+          type='text' 
+          className='input__search'
+          onChange={(event) => {setResult(event.target.value)}}
+        />
 				<section className='table pb-48'>
 					<div className='table-head'>
 						<ul className='table-row'>
@@ -36,7 +42,13 @@ function OrdersPage() {
 						</ul>
 					</div>
 					<div className='table-body'>
-          {orders.map((order) => (
+            {orders.filter(order => {
+              if (result === '') {
+                return order;
+              } else if (order.product_name.toLowerCase().includes(result.toLowerCase())){
+                return order;
+              }
+            }).map(order => (
             <div key={order.id} className='table-row'>
               <p className='table-col'>{order.order_key}</p>
               <div className='table-col table-gr'>
@@ -55,7 +67,7 @@ function OrdersPage() {
               : <p className='table-col table-status rejected'><span>{order.order_status}</span></p>
               }
             </div>
-          ))}
+            ))}
 					</div>
 				</section>
 			</section>

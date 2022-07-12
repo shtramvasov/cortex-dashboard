@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar';
 
 function ProductsPage() {
 	const [products, setProducts] = useState([]);
+  const [result, setResult] = useState('');
 
 	const getProducts = async () => {
 		try {
@@ -33,6 +34,11 @@ function ProductsPage() {
 			<Sidebar />
 			<section className='wrapper productspage'>
 				<h1>Список товаров</h1>
+        <input 
+          type='text' 
+          className='input__search'
+          onChange={(event) => {setResult(event.target.value)}}
+        />
 				<section className='table pb-48'>
 					<div className='table-head'>
 						<ul className='table-row'>
@@ -44,7 +50,13 @@ function ProductsPage() {
 						</ul>
 					</div>
 					<div className='table-body'>
-          {products.map((product) => (
+            {products.filter(product => {
+              if (result === '') {
+                return product;
+              } else if (product.name.toLowerCase().includes(result.toLowerCase())){
+                return product;
+              }
+            }).map(product =>(
             <div key={product.id} className='table-row'>
               <p className='table-col'>{product.id}</p>
               <div className='table-col table-gr'>
@@ -60,7 +72,7 @@ function ProductsPage() {
                 </button>
               </p>
             </div>
-          ))}
+            ))}
 					</div>
 				</section>
 			</section>

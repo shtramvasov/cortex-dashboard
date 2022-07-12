@@ -60,6 +60,10 @@ function App() {
 				path='/registration'
 				element={!isAuthenticated ? <RegistrationPage setAuth={setAuth}/> : <Navigate to='/' />}
 			/>
+      <Route
+				path='*'
+				element={isAuthenticated ? <DashboardPage /> : <Navigate to='/login' />}
+			/>
 		</Routes>
     <ToastContainer
       autoClose={1500}
