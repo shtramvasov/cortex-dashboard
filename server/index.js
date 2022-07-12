@@ -33,6 +33,17 @@ app.get ('/products', async (req, res) => {
   }
 });
 
+// delete product
+app.delete ('/products/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await pool.query
+    ('DELETE FROM products WHERE id = $1', [id]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 // update password
 app.post ('/settings', require('./approute'), async (req, res) => {
   try {

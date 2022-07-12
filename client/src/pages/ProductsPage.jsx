@@ -16,7 +16,17 @@ function ProductsPage() {
 
 	useEffect(() => {
 		getProducts();
-	}, []);
+	}, [products]);
+
+	const deleteProduct = async (id) => {
+		try {
+      const res = await fetch(`http://localhost:5000/products/${id}`, {
+        method: 'DELETE'
+      });
+		} catch (err) {
+      console.error(err.message);
+    }
+	};
 
 	return (
 		<section className='app-wrapper flex'>
@@ -48,7 +58,10 @@ function ProductsPage() {
 								<p className='table-col'>{product.price} ₽</p>
 								<p className='table-col'>{product.quantity}</p>
 								<p className='table-col'>
-									<button className='button__delete'></button>
+									<button
+										className='button__delete'
+										onClick={() => deleteProduct(product.id)}
+									></button>
 								</p>
 							</div>
 						))}
