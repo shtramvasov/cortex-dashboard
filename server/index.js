@@ -54,7 +54,6 @@ app.post ('/edit', async (req, res) => {
   } catch (err) {
     console.error(err.message);  
   }
-
 });
 
 // add product
