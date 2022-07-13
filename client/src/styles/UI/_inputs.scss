@@ -20,6 +20,29 @@ input,
   &__search {
     background-image: url('../images/Icon-search.svg');
   }
+
+  &__file {
+    cursor: pointer;
+    height: 7.5rem;
+    width: 7.5rem;
+    background-image: url('../images/Icon-download.svg');
+    background-position: center;
+    text-indent: 200%;
+    white-space: nowrap;
+
+    &:disabled {
+      background-color: $lightgray;
+      cursor: auto;
+
+      &:hover {
+        border: 1px solid $outline-gray;
+      }
+    }
+  }
+}
+
+input::file-selector-button {
+  display: none;
 }
 
 input, .input, select {

@@ -91,11 +91,7 @@ function ProductForm({ product, action }) {
 								},
 							})}
 						/>
-						{errors?.name && (
-							<p className='description error'>
-								{errors?.name?.message || 'Ошибка заполнения'}
-							</p>
-						)}
+						{errors?.name && (<p className='description error'>{errors?.name?.message || 'Ошибка заполнения'}</p>)}
 					</label>
 					<label>
 						Описание
@@ -110,7 +106,11 @@ function ProductForm({ product, action }) {
 				<div className='productpage__form__column'>
 					<label>
 						Загрузить Изображение
-						<input />
+						<input 
+              className='input__file' 
+              type='file'
+              disabled
+            /> 
 					</label>
 					<label>
 						Цена
@@ -120,11 +120,7 @@ function ProductForm({ product, action }) {
 								required: 'Введите цену товара',
 							})}
 						/>
-						{errors?.price && (
-							<p className='description error'>
-								{errors?.price?.message || 'Ошибка заполнения'}
-							</p>
-						)}
+						{errors?.price && (<p className='description error'>{errors?.price?.message || 'Ошибка заполнения'}</p>)}
 					</label>
 					<label>
 						Количество
@@ -134,11 +130,7 @@ function ProductForm({ product, action }) {
 								required: 'Введите количество товара',
 							})}
 						/>
-						{errors?.quantity && (
-							<p className='description error'>
-								{errors?.quantity?.message || 'Ошибка заполнения'}
-							</p>
-						)}
+						{errors?.quantity && (<p className='description error'>{errors?.quantity?.message || 'Ошибка заполнения'}</p>)}
 					</label>
 				</div>
 				<button type='submit'>Отправить</button>
