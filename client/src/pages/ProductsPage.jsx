@@ -10,7 +10,7 @@ function ProductsPage() {
 
 	const getProducts = async () => {
 		try {
-			const response = await fetch('http://localhost:5000/products');
+			const response = await fetch('/products');
 			const jsonData = await response.json();
 			setProducts(jsonData);
 		} catch (err) {

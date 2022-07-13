@@ -9,7 +9,7 @@ function OrdersPage() {
 
 	const getOrders = async () => {
 		try {
-			const response = await fetch('http://localhost:5000/orders');
+			const response = await fetch('/orders');
 			const jsonData = await response.json();
 			setOrders(jsonData);
 		} catch (err) {

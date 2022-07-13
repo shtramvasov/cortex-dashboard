@@ -8,7 +8,7 @@ import cortexLogo from '../images/logo.svg';
 function RegistrationPage({ setAuth }) {
 	const formSubmit = async (data) => {
     try {
-      const response = await fetch('http://localhost:5000/registration', {
+      const response = await fetch('/registration', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)

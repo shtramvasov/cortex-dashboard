@@ -16,7 +16,7 @@ function App() {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
   const checkAuthenticated = async () => {
 		try {
-			const res = await fetch('http://localhost:5000/validate', {
+			const res = await fetch('/validate', {
 				method: 'GET',
 				headers: { token: localStorage.token },
 			});

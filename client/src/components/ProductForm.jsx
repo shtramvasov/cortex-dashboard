@@ -27,7 +27,7 @@ function ProductForm({ product, action }) {
 
 	const getProduct = async () => {
 		try {
-			const response = await fetch(`http://localhost:5000/products/${state}`);
+			const response = await fetch(`/products/${state}`);
 			const jsonData = await response.json();
 			reset(jsonData);
 		} catch (err) {
@@ -42,7 +42,7 @@ function ProductForm({ product, action }) {
 	const editProduct = async (data) => {
 		try {
 			data.id = product.id;
-			const response = await fetch('http://localhost:5000/edit', {
+			const response = await fetch('/edit', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data),
@@ -56,7 +56,7 @@ function ProductForm({ product, action }) {
 
   const addProduct = async (data) => {
 		try {
-			const response = await fetch('http://localhost:5000/add', {
+			const response = await fetch('/add', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data),

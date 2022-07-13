@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function TableItemProduct({ product }) {
 	const deleteProduct = async (id) => {
 		try {
-			const res = await fetch(`http://localhost:5000/products/${id}`, {
+			const res = await fetch(`/products/${id}`, {
 				method: 'DELETE',
 			});
 		} catch (err) {
