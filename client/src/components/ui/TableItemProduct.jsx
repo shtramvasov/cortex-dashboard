@@ -13,7 +13,7 @@ function TableItemProduct({ product }) {
 	}
   
   return (
-    <div key={product.id} className='table-row'>
+    <div role='tableitem' key={product.id} className='table-row'>
       <p className='table-col'>{product.id}</p>
       <div className='table-col table-gr'>
         <div><img src={product.image} alt={product.name} /></div>
