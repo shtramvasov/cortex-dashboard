@@ -5,8 +5,8 @@ import UserAvatar from '../images/avatar-default.svg';
 
 function Sidebar() {
 	return (
-		<section className='sidebar flex cols'>
-			<img className='sidebar__logo' src={Logo} alt='Кортекс' />
+		<section role='sidebar' className='sidebar flex cols'>
+			<img role='logo' className='sidebar__logo' src={Logo} alt='Кортекс' />
 			<nav className='sidebar__menu flex cols'>
 				<NavLink className='sidebar__menu__dashboard' to='/'>
 					Сводка
@@ -21,8 +21,8 @@ function Sidebar() {
 					Настройки
 				</NavLink>
 			</nav>
-			<div className='sidebar__userblock flex'>
-				<img src={UserAvatar} alt={localStorage.getItem('username')} />
+			<div role='userblock' className='sidebar__userblock flex'>
+				<img role='avatar' src={UserAvatar} alt={localStorage.getItem('username')} />
 				<p className='bold'>{localStorage.getItem('username')}</p>
 			</div>
 		</section>
