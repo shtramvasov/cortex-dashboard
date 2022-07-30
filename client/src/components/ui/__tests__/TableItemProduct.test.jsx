@@ -11,8 +11,6 @@ const product = {
 	quantity: 10,
 };
 
-const onClick = jest.fn();
-
 function renderComponent() {
   return (
 		<Router>

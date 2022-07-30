@@ -10,10 +10,12 @@ function AuthForm({ method, formSubmit, buttonText = 'Отправить' }) {
 
 	return (
 		<form
+      role='form'
 			className='loginpage__form'
 			method={method}
 			onSubmit={handleSubmit(formSubmit)}>
       <input
+        role='username'
         placeholder='Пользователь'
         className='input__user'
         {...register('username', { 
@@ -30,6 +32,7 @@ function AuthForm({ method, formSubmit, buttonText = 'Отправить' }) {
         </p>
       )}
       <input
+        role='password'
         type='password'
         placeholder='Пароль'
         className='input__password'
