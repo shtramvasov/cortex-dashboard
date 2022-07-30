@@ -60,8 +60,8 @@ function DashboardStatistics({ data }) {
 				title='Заказы'
 				timePeriod='За сегодня'
 				timeComparison='За прошлую неделю'
-				currentValue={dummytodayOrders} // .lenght prod
-				dynamicsValue={dummyweeklyOrders} // .lenght prod
+				currentValue={dummytodayOrders} // .length prod
+				dynamicsValue={dummyweeklyOrders} // .length prod
 			/>
 			<StatisticsCard
 				title='Средний чек'
