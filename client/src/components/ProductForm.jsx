@@ -69,7 +69,7 @@ function ProductForm({ product, action }) {
 	};
 
 	return (
-		<div className='productpage__wrapper card card--big flex cols'>
+		<div role='productform' className='productpage__wrapper card card--big flex cols'>
 			{product.name ? <h1>{product.name}</h1> : <h1>Добавление товара</h1>}
 			<form
 				className='productpage__form flex'
@@ -82,7 +82,7 @@ function ProductForm({ product, action }) {
 				<div className='productpage__form__column'>
 					<label>
 						Название
-						<input
+						<input role='name'
 							{...register('name', {
 								required: 'Введите название товара',
 								maxLength: {
@@ -95,7 +95,7 @@ function ProductForm({ product, action }) {
 					</label>
 					<label>
 						Описание
-						<textarea
+						<textarea role='description'
 							{...register('description')}
 							className='input'
 							cols='35'
@@ -114,7 +114,7 @@ function ProductForm({ product, action }) {
 					</label>
 					<label>
 						Цена
-						<input
+						<input role='price'
 							type='number'
 							{...register('price', {
 								required: 'Введите цену товара',
@@ -122,9 +122,9 @@ function ProductForm({ product, action }) {
 						/>
 						{errors?.price && (<p className='description error'>{errors?.price?.message || 'Ошибка заполнения'}</p>)}
 					</label>
-					<label>
+					<label> 
 						Количество
-						<input
+						<input role='quantity'
 							type='number'
 							{...register('quantity', {
 								required: 'Введите количество товара',
