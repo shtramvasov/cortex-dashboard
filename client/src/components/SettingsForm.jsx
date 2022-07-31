@@ -31,23 +31,23 @@ function SettingsForm({ method, buttonText = 'Сохранить изменен�
 	};
 
 	return (
-		<div className='settingspage__wrapper card card--big flex cols'>
+		<div role='settingform' className='settingspage__wrapper card card--big flex cols'>
 			<h1 className='pb-80'>Настройки аккаунта</h1>
-			<img src={avatar} alt={localStorage.getItem('username')} />
-			<form
+			<img role='avatar' src={avatar} alt={localStorage.getItem('username')} />
+			<form 
 				className='settingspage__form flex cols'
 				method={method}
 				onSubmit={handleSubmit(formSubmit)}>
 				<label>
 					Аккаунт
-					<input
+					<input role='username'
 						value={localStorage.getItem('username')}
 						{...register('username')}
 					/>
 				</label>
 				<label>
 					Сменить пароль
-					<input
+					<input role='password'
 						{...register('password', {
 							required: 'Введите пароль',
 							minLength: {
